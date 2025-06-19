@@ -18,6 +18,32 @@ const techStack = [
   <Image src="/icons/Kubernetes.svg" alt="Kubernetes" width={48} height={48} />,
 ];
 
+const featuredProjects = [
+  {
+    title: "TerraformRun Dashboard",
+    description: "Dashboard surfacing Terraform run triggers and usage data.",
+    icon: "/icons/react-original.svg",
+    tech: ["React", "GoLang", "GCP"],
+    link: "https://github.com/sheneska/TerraformRunDashboard",
+  },
+  {
+    title: "Personal Portfolio",
+    description: "Cleanly built developer site to highlight my work.",
+    icon: "/icons/react-original.svg",
+    tech: ["React", "Tailwind"],
+    link: "https://github.com/sheneska/personalsite",
+  },
+  {
+    title: "Google SPS App",
+    description: "GCP-integrated web tool built during Google's SPS program.",
+    icon: "/icons/Googlecloud.svg",
+    tech: ["JavaScript", "App Engine", "Datastore"],
+    link: "https://github.com/sheneska/software-product-sprint",
+  },
+];
+
+
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
@@ -70,6 +96,48 @@ export default function Home() {
         </div>
         </div>
       </section>
+
+    <section id="projects" className="bg-black text-white py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+        <h2 className="text-4xl font-light mb-10 text-center">Featured Projects</h2>
+
+        <div className="overflow-x-auto pb-4">
+           <div className="flex gap-6 w-max mx-auto">
+            {featuredProjects.map((project) => (
+              <div
+                key={project.title}
+                className="bg-[#111] rounded-2xl border border-gray-700 p-6 w-72 min-w-[18rem] hover:border-purple-400 transition duration-300 shadow-sm"
+              >
+                <div className="mb-4 h-16 flex justify-center items-center">
+                  <Image src={project.icon} alt={project.title} width={40} height={40} />
+                </div>
+
+                <h3 className="text-lg font-semibold text-white mb-1">{project.title}</h3>
+                <p className="text-gray-400 text-sm mb-3">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech) => (
+                    <span key={tech} className="bg-gray-800 text-gray-300 text-xs px-2 py-1 rounded">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-purple-400 hover:underline"
+                >
+                  View Project →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
 
       <section className="bg-black text-white py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-10">
