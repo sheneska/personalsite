@@ -4,19 +4,20 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 
 const techStack = [
-  <Image src="/icons/javascript-plain.svg" alt="JavaScript" width={48} height={48} />,
-  <Image src="/icons/python-plain.svg" alt="Python" width={48} height={48} />,
-  <Image src="/icons/golang-plain.svg" alt="Go" width={48} height={48} />,
-  <Image src="/icons/c-plain.svg" alt="C" width={48} height={48} />,
-  <Image src="/icons/html5-plain.svg" alt="HTML" width={48} height={48} />,
-  <Image src="/icons/react-original.svg" alt="React" width={48} height={48} />,
-  <Image src="/icons/css3-plain.svg" alt="CSS" width={48} height={48} />,
-  <Image src="/icons/Terraform.svg" alt="Terraform" width={48} height={48} />,
-  <Image src="/icons/java-plain.svg" alt="Java" width={48} height={48} />,
-  <Image src="/icons/Tailwindcss.svg" alt="Tailwind CSS" width={48} height={48} />,
-  <Image src="/icons/Googlecloud.svg" alt="Google Cloud" width={48} height={48} />,
-  <Image src="/icons/Kubernetes.svg" alt="Kubernetes" width={48} height={48} />,
+  { src: "/icons/javascript-plain.svg", alt: "JavaScript" },
+  { src: "/icons/python-plain.svg", alt: "Python" },
+  { src: "/icons/golang-plain.svg", alt: "Go" },
+  { src: "/icons/c-plain.svg", alt: "C" },
+  { src: "/icons/html5-plain.svg", alt: "HTML" },
+  { src: "/icons/react-original.svg", alt: "React" },
+  { src: "/icons/css3-plain.svg", alt: "CSS" },
+  { src: "/icons/Terraform.svg", alt: "Terraform" },
+  { src: "/icons/java-plain.svg", alt: "Java" },
+  { src: "/icons/Tailwindcss.svg", alt: "Tailwind CSS" },
+  { src: "/icons/Googlecloud.svg", alt: "Google Cloud" },
+  { src: "/icons/Kubernetes.svg", alt: "Kubernetes" },
 ];
+
 
 const featuredProjects = [
   {
@@ -88,11 +89,12 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
           <h2 className="text-4xl font-heading mb-10 text-center font-light">Tech Stack</h2>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center justify-center">
-          {techStack.map((icon, index) => (
-            <div key={index} className="flex justify-center items-center grayscale hover:grayscale-0 transition duration-300">
-              {icon}
+          {techStack.map((tech) => (
+            <div key={tech.alt} className="flex justify-center items-center grayscale hover:grayscale-0 transition duration-300">
+              <Image src={tech.src} alt={tech.alt} width={48} height={48} />
             </div>
           ))}
+
         </div>
         </div>
       </section>
